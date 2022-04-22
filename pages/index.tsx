@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import AccountInfo from "../components/AccountInfo";
 import AirdropButton from "../components/AirdropButton";
@@ -15,7 +14,6 @@ const Home: NextPage = () => {
   const { connection } = useConnection();
 
   const getAccountInfo = useCallback(() => {
-    console.log("account if");
     if (!connection || !publicKey) {
       setAccount(null);
       return;

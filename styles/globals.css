@@ -25,6 +25,10 @@ a {
   margin-bottom: 4px;
 }
 
+.button-group .wallet-adapter-button-trigger {
+  background-color: #512da8;
+}
+
 @media (min-width: 768px) {
   .button-group > *,
   .button-group .wallet-adapter-button {
