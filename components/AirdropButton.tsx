@@ -35,7 +35,7 @@ const AirdropButton = ({ onSuccess }: AirdropButtonProps) => {
 
   return (
     <button
-      className="bg-cyan-400 hover:bg-amber-400 disabled:bg-slate-400 disabled:cursor-not-allowed px-4 py-2 text-white font-semibold mr-2"
+      className="bg-cyan-400 hover:bg-amber-400 disabled:bg-slate-400 disabled:cursor-not-allowed px-4 py-2 text-white font-semibold mr-2 rounded"
       onClick={handleClickEvent}
       disabled={isLoading}
     >

@@ -38,7 +38,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className="container mx-auto">
-        <div className="w-full md:w-1/2 mx-auto border rounded-lg mt-16 p-4">
+        <div className="w-full md:w-1/2 mx-auto border rounded mt-16 p-4">
           <section className="mb-2">
             <AccountInfo
               solQuantity={(account?.lamports || 0) / web3.LAMPORTS_PER_SOL}

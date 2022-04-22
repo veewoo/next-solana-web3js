@@ -76,7 +76,7 @@ const SendButton = ({ onSuccess }: SendButtonProps) => {
 
   return (
     <button
-      className="bg-sky-400 hover:bg-amber-400 disabled:bg-slate-400 disabled:cursor-not-allowed px-4 py-2 text-white font-semibold"
+      className="bg-sky-400 hover:bg-amber-400 disabled:bg-slate-400 disabled:cursor-not-allowed px-4 py-2 text-white font-semibold rounded"
       onClick={handleClickEvent}
       disabled={isLoading}
     >
