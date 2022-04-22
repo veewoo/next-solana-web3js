@@ -31,7 +31,7 @@ const AirdropButton = ({ onSuccess }: AirdropButtonProps) => {
       .finally(() => {
         setTimeout(() => setIsLoading(false), 10000);
       });
-  }, [connection, publicKey]);
+  }, [connection, publicKey, onSuccess]);
 
   return (
     <button

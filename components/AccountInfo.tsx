@@ -44,8 +44,9 @@ const AccountInfo = ({ solQuantity }: AccountInfoProps) => {
       <p>
         Send me 0.1 SOL and my app will send you back 0.2 SOL automatically.{" "}
         <br />
-        If you don't have any SOL in your wallet, you can click to "Airdrop 1
-        SOL" button to receive 1 SOL (Waiting interval: 10 seconds).
+        If you don&apos;t have any SOL in your wallet, you can click to
+        &quot;Airdrop 1 SOL&quot; button to receive 1 SOL (Waiting interval: 10
+        seconds).
       </p>
     </div>
   );
