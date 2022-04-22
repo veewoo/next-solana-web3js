@@ -25,7 +25,7 @@ const AccountInfo = ({ solQuantity }: AccountInfoProps) => {
           </>
         )}
       </h1>
-      <div className="flex justify-center mb-4 button-group">
+      <div className="flex flex-wrap items-center justify-center mb-4 button-group">
         <WalletMultiButton />
         <WalletDisconnectButton />
       </div>

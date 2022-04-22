@@ -19,9 +19,24 @@ a {
   box-sizing: border-box;
 }
 
-.button-group > *:first-child {
-  margin-right: 8px;
+.button-group > *,
+.button-group .wallet-adapter-button {
+  width: 100%;
+  margin-bottom: 4px;
 }
-.button-group > *:last-child {
-  margin-left: 8px;
+
+@media (min-width: 768px) {
+  .button-group > *,
+  .button-group .wallet-adapter-button {
+    width: auto;
+    margin-bottom: 0;
+  }
+
+  .button-group > *:first-child {
+    margin-right: 8px;
+  }
+
+  .button-group > *:last-child {
+    margin-left: 8px;
+  }
 }
