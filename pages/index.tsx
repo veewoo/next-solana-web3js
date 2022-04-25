@@ -29,7 +29,7 @@ const Home: NextPage = () => {
     });
   }, [connection, publicKey]);
 
-  useEffect(() => getAccountInfo(), [connection, publicKey]);
+  useEffect(() => getAccountInfo(), [connection, publicKey, getAccountInfo]);
 
   return (
     <div className={styles.container}>
