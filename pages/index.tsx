@@ -7,6 +7,8 @@ import * as web3 from "@solana/web3.js";
 import { useCallback, useEffect, useState } from "react";
 import { useWallet, useConnection } from "@solana/wallet-adapter-react";
 import SendButton from "../components/SendButton";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const Home: NextPage = () => {
   const [account, setAccount] = useState<web3.AccountInfo<Buffer> | null>(null);
@@ -37,30 +39,31 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <Header />
+
       <main className="container mx-auto">
-        <div className="w-full md:w-1/2 mx-auto border rounded mt-16 p-4">
-          <section className="mb-2">
-            <AccountInfo
-              solQuantity={(account?.lamports || 0) / web3.LAMPORTS_PER_SOL}
-            />
-          </section>
-          <section className="">
-            <AirdropButton onSuccess={getAccountInfo} />
-            <SendButton onSuccess={getAccountInfo} />
-          </section>
-        </div>
+        <section className="mb-8">
+          <h1 className="text-3xl md:text-5xl mb-2 text-center">
+            <b>Veewoo DApp #1</b>
+          </h1>
+          {!publicKey && (
+            <h2 className="text-2xl text-center">
+              Please connect your wallet to use this app.
+            </h2>
+          )}
+        </section>
+        <section className="mb-2">
+          <AccountInfo
+            solQuantity={(account?.lamports || 0) / web3.LAMPORTS_PER_SOL}
+          />
+        </section>
+        <section className="">
+          <AirdropButton onSuccess={getAccountInfo} />
+          <SendButton onSuccess={getAccountInfo} />
+        </section>
       </main>
 
-      <footer className="text-center mt-4">
-        <a
-          href="https://github.com/veewoo"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span>Powered by </span>
-          <span> VeeWoo</span>
-        </a>
-      </footer>
+      <Footer />
     </div>
   );
 };
