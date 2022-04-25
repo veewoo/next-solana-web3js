@@ -8,7 +8,7 @@ type FooterProps = {};
 
 const Footer = ({}: FooterProps) => {
   return (
-    <footer className="text-center mt-4">
+    <footer className="text-center mt-auto py-4">
       <a
         href="https://github.com/veewoo"
         target="_blank"
