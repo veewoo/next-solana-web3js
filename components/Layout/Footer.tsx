@@ -1,12 +1,6 @@
-import {
-  WalletMultiButton,
-  WalletDisconnectButton,
-} from "@solana/wallet-adapter-react-ui";
 import React from "react";
 
-type FooterProps = {};
-
-const Footer = ({}: FooterProps) => {
+const Footer = () => {
   return (
     <footer className="text-center mt-auto py-4">
       <a

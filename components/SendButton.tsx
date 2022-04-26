@@ -58,7 +58,6 @@ const SendButton = ({ onSuccess }: SendButtonProps) => {
       })
       .then((rpcResponseAndContext) => {
         if (rpcResponseAndContext.value.err) {
-          console.log({ error: rpcResponseAndContext.value.err });
           return null;
         }
         return sendAndConfirmTransaction(connection, transactionTwo, [
@@ -66,8 +65,7 @@ const SendButton = ({ onSuccess }: SendButtonProps) => {
         ]);
       })
       .then((res) => {
-        if (!res) return;
-        typeof onSuccess === "function" && onSuccess();
+        if (res && typeof onSuccess === "function") onSuccess();
       })
       .finally(() => {
         setIsLoading(false);

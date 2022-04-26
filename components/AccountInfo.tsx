@@ -1,9 +1,5 @@
-import { useWallet } from "@solana/wallet-adapter-react";
-import {
-  WalletMultiButton,
-  WalletDisconnectButton,
-} from "@solana/wallet-adapter-react-ui";
-import React from "react";
+import { useConnection, useWallet } from "@solana/wallet-adapter-react";
+import React, { useEffect } from "react";
 
 type AccountInfoProps = {
   solQuantity: number;
@@ -11,6 +7,13 @@ type AccountInfoProps = {
 
 const AccountInfo = ({ solQuantity }: AccountInfoProps) => {
   const { publicKey } = useWallet();
+  const { connection } = useConnection();
+
+  useEffect(() => {
+    // connection.getClusterNodes().then((res) => console.log(res));
+    console.log(connection.rpcEndpoint);
+    
+  }, [connection]);
 
   return (
     <div>

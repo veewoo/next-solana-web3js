@@ -29,6 +29,8 @@ const AirdropButton = ({ onSuccess }: AirdropButtonProps) => {
         }
       })
       .finally(() => {
+        // Disable the button in 10 seconds 
+        // to prevent click too many times error 
         setTimeout(() => setIsLoading(false), 10000);
       });
   }, [connection, publicKey, onSuccess]);
