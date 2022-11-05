@@ -1,9 +1,18 @@
-import {
-  WalletMultiButton,
-  WalletDisconnectButton,
-} from "@solana/wallet-adapter-react-ui";
+import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import React from "react";
+
+const WalletDisconnectButtonDynamic = dynamic(
+  async () =>
+    (await import("@solana/wallet-adapter-react-ui")).WalletDisconnectButton,
+  { ssr: false }
+);
+
+const WalletMultiButtonDynamic = dynamic(
+  async () =>
+    (await import("@solana/wallet-adapter-react-ui")).WalletMultiButton,
+  { ssr: false }
+);
 
 const PATHS = [
   { path: "/", name: "DApp #1" },
@@ -28,11 +37,11 @@ const Header = () => {
             </option>
           ))}
         </select>
-        <WalletMultiButton />
-        <WalletDisconnectButton />
+        <WalletMultiButtonDynamic />
+        <WalletDisconnectButtonDynamic />
       </div>
     </header>
   );
 };
 
-export default React.memo(Header);
+export default Header;
